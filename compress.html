@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сжатие файлов — FileZip</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/compress.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">File<span>Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="compress.html" style="color:var(--text)">Сжатие</a></li>
+    <li><a href="tools.html">Инструменты</a></li>
+    <li><a href="history.html">История</a></li>
+    <li><a href="about.html">О проекте</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='index.html'">← Главная</button>
+  <button class="burger" id="burger">☰</button>
+</nav>
+
+<div class="page-header">
+  <h1>Сжатие файлов</h1>
+  <p>Загрузите документ или изображение — мы уменьшим его размер прямо в браузере</p>
+</div>
+
+<div class="compress-layout">
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <button class="tab-btn active" id="tabDocs" onclick="switchTab('docs')">📄 Документы</button>
+    <button class="tab-btn" id="tabImages" onclick="switchTab('images')">🖼️ Изображения</button>
+  </div>
+
+  <!-- DROP ZONE -->
+  <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+    <div class="drop-zone-icon" id="dzIcon">📂</div>
+    <h3>Перетащите файлы сюда</h3>
+    <p id="dzFormats">Поддерживаются: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, CSV, ZIP</p>
+    <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.csv,.zip">
+    <button class="btn-primary" style="pointer-events:none">Выбрать файлы</button>
+  </div>
+
+  <!-- FILE LIST -->
+  <div class="file-list" id="fileList"></div>
+
+  <!-- SETTINGS -->
+  <div class="settings-panel" id="settingsPanel" style="display:none">
+    <h3>Уровень сжатия</h3>
+    <div class="level-options">
+      <div class="level-option" onclick="setLevel('high')" id="lvlHigh">
+        <span class="level-name">Высокое</span>
+        <span class="level-desc">Макс. уменьшение, возможна потеря</span>
+      </div>
+      <div class="level-option active" onclick="setLevel('medium')" id="lvlMedium">
+        <span class="level-name">Среднее</span>
+        <span class="level-desc">Баланс качества и размера</span>
+      </div>
+      <div class="level-option" onclick="setLevel('low')" id="lvlLow">
+        <span class="level-name">Низкое</span>
+        <span class="level-desc">Мин. потеря, меньше сжатие</span>
+      </div>
+    </div>
+
+    <!-- Image quality slider -->
+    <div id="qualityGroup" class="form-group" style="margin-top:1rem">
+      <label>Качество изображения: <strong id="qualityVal">75%</strong></label>
+      <input type="range" id="qualitySlider" min="10" max="100" value="75"
+             oninput="document.getElementById('qualityVal').textContent=this.value+'%'">
+    </div>
+  </div>
+
+  <!-- COMPRESS BUTTON -->
+  <div id="compressActions" style="display:none; margin-bottom:2rem; display:none">
+    <button class="btn-primary" onclick="startCompression()" id="compressBtn">
+      ⚡ Сжать файлы
+    </button>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loadingBlock" style="display:none; text-align:center; padding: 2rem 0;">
+    <div class="spinner"></div>
+    <p style="color:var(--text-muted); font-size:0.9rem" id="loadingMsg">Обработка файлов...</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultsBlock" style="display:none">
+    <h3 style="font-family:var(--font-display);font-weight:700;margin-bottom:1.2rem;">
+      ✅ Результаты обработки
+    </h3>
+    <div id="resultsList"></div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+      <button class="btn-primary" onclick="downloadAll()">⬇ Скачать все</button>
+      <button class="btn-ghost" onclick="resetAll()">↺ Обработать ещё</button>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">File<span>Zip</span></div>
+    <p>Все файлы обрабатываются локально в вашем браузере. Данные не отправляются на серверы.</p>
+    <p class="footer-copy">© 2025 FileZip</p>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
+
+<!-- LIBS -->
+<script src="libs/pdf-lib.min.js"></script>
+<script src="libs/FileSaver.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/compress.js"></script>
+<script src="js/image.js"></script>
+<script src="js/document.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* ===== COMPRESS.CSS — Дополнительные стили страницы сжатия ===== */
+
+/* Animated drop zone glow on drag */
+.drop-zone.drag-over {
+  animation: glowPulse 1s ease infinite alternate;
+}
+@keyframes glowPulse {
+  from { box-shadow: 0 0 0 4px rgba(108,99,255,0.1); }
+  to   { box-shadow: 0 0 0 8px rgba(108,99,255,0.25), 0 0 40px rgba(108,99,255,0.1); }
+}
+
+/* Result card appear animation */
+.result-card {
+  animation: slideUp 0.35s ease both;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* File item appear */
+.file-item {
+  animation: fadeIn 0.2s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Progress bar shimmer */
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  to { left: 200%; }
+}
+
+/* Quality slider custom style */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+  margin-top: 0.5rem;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.25);
+  transition: box-shadow 0.2s;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(108,99,255,0.3);
+}
+
+/* Compress button pulse while processing */
+#compressBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  animation: none;
+}
+
+/* Tool panel slide-in */
+#toolPanel {
+  animation: slideUp 0.3s ease both;
+}
+
+/* Summary cards on history page */
+#summaryCards .tool-card {
+  cursor: default;
+  transition: none;
+}
+#summaryCards .tool-card:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}

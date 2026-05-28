@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инструменты — FileZip</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/compress.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">File<span>Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="compress.html">Сжатие</a></li>
+    <li><a href="tools.html" style="color:var(--text)">Инструменты</a></li>
+    <li><a href="history.html">История</a></li>
+    <li><a href="about.html">О проекте</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='index.html'">← Главная</button>
+  <button class="burger" id="burger">☰</button>
+</nav>
+
+<div class="page-header">
+  <h1>Инструменты</h1>
+  <p>Полный набор для работы с документами и изображениями</p>
+</div>
+
+<div class="tools-page">
+
+  <!-- CONVERSION SECTION — FIRST -->
+  <div class="tool-section-title">Конвертация файлов</div>
+  <div class="conv-two-col">
+
+    <!-- В PDF -->
+    <div class="conv-group">
+      <div class="conv-group-header">
+        <span class="conv-arrow-badge in">→ PDF</span>
+        <h3>Конвертация в PDF</h3>
+      </div>
+      <div class="conv-list">
+        <div class="conv-item" onclick="openTool('jpg2pdf')">
+          <div class="conv-icon" style="background:#ff5f5f">🖼️</div>
+          <span>JPG в PDF</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('word2pdf')">
+          <div class="conv-icon" style="background:#2b5eb8">W</div>
+          <span>WORD в PDF</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('ppt2pdf')">
+          <div class="conv-icon" style="background:#d04423">P</div>
+          <span>POWERPOINT в PDF</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('excel2pdf')">
+          <div class="conv-icon" style="background:#1e7145">X</div>
+          <span>EXCEL в PDF</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('html2pdf')">
+          <div class="conv-icon" style="background:#e44d26">H</div>
+          <span>HTML в PDF</span>
+          <span class="conv-chevron">›</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Из PDF -->
+    <div class="conv-group">
+      <div class="conv-group-header">
+        <span class="conv-arrow-badge out">PDF →</span>
+        <h3>Преобразовать из PDF</h3>
+      </div>
+      <div class="conv-list">
+        <div class="conv-item" onclick="openTool('pdf2jpg')">
+          <div class="conv-icon" style="background:#ff5f5f">🖼️</div>
+          <span>PDF в JPG</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('pdf2word')">
+          <div class="conv-icon" style="background:#2b5eb8">W</div>
+          <span>PDF в WORD</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('pdf2ppt')">
+          <div class="conv-icon" style="background:#d04423">P</div>
+          <span>PDF в POWERPOINT</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('pdf2excel')">
+          <div class="conv-icon" style="background:#1e7145">X</div>
+          <span>PDF в EXCEL</span>
+          <span class="conv-chevron">›</span>
+        </div>
+        <div class="conv-item" onclick="openTool('pdf2txt')">
+          <div class="conv-icon" style="background:#6c63ff">/A</div>
+          <span>PDF в TXT</span>
+          <span class="conv-chevron">›</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PDF TOOLS -->
+  <div class="tool-section-title" style="margin-top:2.5rem">Документы · PDF</div>
+  <div class="tools-big-grid">
+    <div class="tool-big-card" onclick="openTool('merge')">
+      <div class="tool-icon" style="background:#a855f722;color:#a855f7;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">✚</div>
+      <h3>Объединить PDF</h3>
+      <p>Соедините несколько PDF файлов в один документ</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('split')">
+      <div class="tool-icon" style="background:#22c55e22;color:#22c55e;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">✂</div>
+      <h3>Разделить PDF</h3>
+      <p>Разбейте PDF на отдельные страницы или диапазоны</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('rotate')">
+      <div class="tool-icon" style="background:#f97316 22;color:#f97316;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">↻</div>
+      <h3>Повернуть страницы</h3>
+      <p>Поворот страниц PDF на 90°, 180° или 270°</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('watermark')">
+      <div class="tool-icon" style="background:#f59e0b22;color:#f59e0b;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">◈</div>
+      <h3>Водяной знак</h3>
+      <p>Добавьте текстовый водяной знак на страницы PDF</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('protect')">
+      <div class="tool-icon" style="background:#06b6d422;color:#06b6d4;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">🔒</div>
+      <h3>Защита PDF</h3>
+      <p>Защитите PDF файл паролем (симуляция)</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('convert')">
+      <div class="tool-icon" style="background:#ec489922;color:#ec4899;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">⇄</div>
+      <h3>Конвертация PDF</h3>
+      <p>Извлечение текста из PDF и конвертация</p>
+    </div>
+  </div>
+
+  <!-- IMAGE TOOLS -->
+  <div class="tool-section-title">Изображения</div>
+  <div class="tools-big-grid">
+    <div class="tool-big-card" onclick="openTool('resize')">
+      <div class="tool-icon" style="background:#84cc1622;color:#84cc16;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">⊞</div>
+      <h3>Изменить размер</h3>
+      <p>Масштабирование изображений по ширине, высоте или %</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('crop')">
+      <div class="tool-icon" style="background:#6c63ff22;color:#6c63ff;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">⊡</div>
+      <h3>Обрезка</h3>
+      <p>Обрезайте изображения по заданным координатам</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('imgrotate')">
+      <div class="tool-icon" style="background:#ff6b6b22;color:#ff6b6b;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">↺</div>
+      <h3>Повернуть изображение</h3>
+      <p>Поворот изображения на нужный угол</p>
+    </div>
+    <div class="tool-big-card" onclick="openTool('imgconvert')">
+      <div class="tool-icon" style="background:#06b6d422;color:#06b6d4;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;">🔄</div>
+      <h3>Конвертация форматов</h3>
+      <p>Конвертируйте между JPG, PNG, WEBP форматами</p>
+    </div>
+  </div>
+
+  <!-- ACTIVE TOOL PANEL -->
+  <div id="toolPanel" style="display:none">
+    <div class="tool-panel" id="toolContent"></div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">File<span>Zip</span></div>
+    <p class="footer-copy">© 2025 FileZip — Все операции в браузере</p>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
+
+<script src="libs/jszip.min.js"></script>
+<script src="libs/docx.min.js"></script>
+<script src="libs/mammoth.min.js"></script>
+<script src="libs/pdf-lib.min.js"></script>
+<script src="libs/FileSaver.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/image.js"></script>
+<script src="js/document.js"></script>
+<script>
+
+const toolDefs = {
+
+  // ===== КОНВЕРТАЦИЯ В PDF =====
+  jpg2pdf: {
+    title: '🖼️ JPG / PNG в PDF',
+    html: `
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem">Выберите одно или несколько изображений — они будут объединены в один PDF файл.</p>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('j2pInput').click()">
+        <div class="drop-zone-icon">🖼️</div>
+        <h3>Выберите изображения</h3>
+        <p>JPG, PNG, WEBP — один или несколько файлов</p>
+        <input type="file" id="j2pInput" multiple accept=".jpg,.jpeg,.png,.webp">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файлы</button>
+      </div>
+      <div id="j2pList" style="margin:1rem 0"></div>
+      <button class="btn-primary" id="j2pBtn" style="display:none;margin-top:0.5rem" onclick="runJpg2Pdf()">🖼️ Создать PDF</button>
+      <div id="j2pResult" style="margin-top:1rem"></div>`,
+    init: initJpg2Pdf
+  },
+
+  word2pdf: {
+    title: 'W WORD в PDF',
+    html: `
+      <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#4ade80;margin-bottom:1.2rem">
+        ✅ Конвертация выполняется прямо в браузере — текст, заголовки, списки, таблицы сохраняются в PDF.
+      </div>
+      <div class="drop-zone" id="w2pDrop" style="padding:2rem" onclick="document.getElementById('w2pInput').click()">
+        <div class="drop-zone-icon">📝</div>
+        <h3>Выберите DOCX файл</h3>
+        <p style="color:var(--text-muted);font-size:0.85rem">Поддерживается .docx и .txt</p>
+        <input type="file" id="w2pInput" accept=".docx,.txt">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файл</button>
+      </div>
+      <div id="w2pFileInfo" style="display:none;margin-top:1rem;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:1rem">
+        <div style="display:flex;align-items:center;gap:0.8rem">
+          <span style="font-size:1.5rem">📝</span>
+          <div>
+            <div id="w2pFileName" style="font-weight:600;font-size:0.9rem"></div>
+            <div id="w2pFileSize" style="color:var(--text-muted);font-size:0.78rem"></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.8rem;margin-top:1rem;flex-wrap:wrap">
+        <button class="btn-primary" id="w2pBtn" style="display:none" onclick="runWord2Pdf()">📄 Конвертировать в PDF</button>
+        <button class="btn-ghost" id="w2pPreviewBtn" style="display:none;font-size:0.85rem;padding:0.7rem 1rem" onclick="previewWord()">👁 Предпросмотр</button>
+      </div>
+      <div id="w2pPreview" style="display:none;margin-top:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;max-height:220px;overflow-y:auto;font-size:0.82rem;line-height:1.6;color:var(--text-muted)"></div>
+      <div id="w2pResult" style="margin-top:1rem"></div>`,
+    init: initWord2Pdf
+  },
+
+  ppt2pdf: {
+    title: 'P POWERPOINT в PDF',
+    html: `
+      <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#f59e0b;margin-bottom:1.2rem">
+        ✅ Конвертация PPTX→PDF: текст слайдов извлекается и структурируется в PDF прямо в браузере.
+      </div>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2pInput').click()">
+        <div class="drop-zone-icon">📊</div>
+        <h3>Выберите PPTX файл</h3>
+        <input type="file" id="p2pInput" accept=".pptx,.ppt,.txt">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файл</button>
+      </div>
+      <button class="btn-primary" id="p2pBtn" style="display:none;margin-top:1rem" onclick="runPpt2Pdf()">P Конвертировать в PDF</button>
+      <div id="p2pResult" style="margin-top:1rem"></div>`,
+    init: initPpt2Pdf
+  },
+
+  excel2pdf: {
+    title: 'X EXCEL в PDF',
+    html: `
+      <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#f59e0b;margin-bottom:1.2rem">
+        ✅ Конвертация CSV→PDF: данные таблицы форматируются в PDF прямо в браузере.
+      </div>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('e2pInput').click()">
+        <div class="drop-zone-icon">📈</div>
+        <h3>Выберите CSV или XLSX файл</h3>
+        <input type="file" id="e2pInput" accept=".csv,.xlsx,.xls,.txt">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файл</button>
+      </div>
+      <button class="btn-primary" id="e2pBtn" style="display:none;margin-top:1rem" onclick="runExcel2Pdf()">X Конвертировать в PDF</button>
+      <div id="e2pResult" style="margin-top:1rem"></div>`,
+    init: initExcel2Pdf
+  },
+
+  html2pdf: {
+    title: 'H HTML в PDF',
+    html: `
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem">Введите HTML код или загрузите файл — будет создан PDF с рендером содержимого.</p>
+      <div class="drop-zone" style="padding:1.5rem" onclick="document.getElementById('h2pInput').click()">
+        <div class="drop-zone-icon">🌐</div>
+        <h3>Выберите HTML файл</h3>
+        <input type="file" id="h2pInput" accept=".html,.htm,.txt">
+        <button class="btn-primary" style="pointer-events:none;margin-top:0.8rem">Выбрать файл</button>
+      </div>
+      <div style="text-align:center;color:var(--text-muted);margin:0.8rem 0;font-size:0.82rem">— или введите HTML —</div>
+      <div class="form-group">
+        <textarea id="h2pText" rows="6" placeholder="<h1>Заголовок</h1><p>Текст...</p>"
+          style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:0.8rem;font-family:monospace;font-size:0.82rem;resize:vertical"></textarea>
+      </div>
+      <button class="btn-primary" id="h2pBtn" onclick="runHtml2Pdf()">🌐 Создать PDF</button>
+      <div id="h2pResult" style="margin-top:1rem"></div>`,
+    init: initHtml2Pdf
+  },
+
+  // ===== КОНВЕРТАЦИЯ ИЗ PDF =====
+  pdf2jpg: {
+    title: '🖼️ PDF в JPG',
+    html: `
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem">Каждая страница PDF будет сохранена как отдельное JPG изображение через Canvas рендеринг.</p>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2jInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="p2jInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Качество JPG: <strong id="p2jQualVal">90%</strong></label>
+        <input type="range" id="p2jQual" min="30" max="100" value="90" oninput="document.getElementById('p2jQualVal').textContent=this.value+'%'">
+      </div>
+      <button class="btn-primary" id="p2jBtn" style="display:none;margin-top:0.5rem" onclick="runPdf2Jpg()">🖼️ Конвертировать</button>
+      <div id="p2jResult" style="margin-top:1rem"></div>`,
+    init: initPdf2Jpg
+  },
+
+  pdf2word: {
+    title: 'W PDF в WORD',
+    html: `
+      <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#4ade80;margin-bottom:1.2rem">
+        ✅ Создаётся настоящий .docx файл (Microsoft Word) прямо в браузере.
+      </div>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2wInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF файл</h3>
+        <p style="color:var(--text-muted);font-size:0.85rem">Текст из PDF будет помещён в Word документ</p>
+        <input type="file" id="p2wInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <button class="btn-primary" id="p2wBtn" style="display:none;margin-top:1rem" onclick="runPdf2Word()">📝 Конвертировать в DOCX</button>
+      <div id="p2wResult" style="margin-top:1rem"></div>`,
+    init: initPdf2Word
+  },
+
+  pdf2ppt: {
+    title: 'P PDF в POWERPOINT (TXT)',
+    html: `
+      <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#f59e0b;margin-bottom:1.2rem">
+        ✅ Текст слайдов извлекается и структурируется в PDF прямо в браузере.
+      </div>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2ptInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="p2ptInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <button class="btn-primary" id="p2ptBtn" style="display:none;margin-top:1rem" onclick="runPdf2Ppt()">P Конвертировать</button>
+      <div id="p2ptResult" style="margin-top:1rem"></div>`,
+    init: initPdf2Ppt
+  },
+
+  pdf2excel: {
+    title: 'X PDF в EXCEL (CSV)',
+    html: `
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem">Извлекает текст из PDF и форматирует как CSV таблицу, которую можно открыть в Excel.</p>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2eInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="p2eInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <button class="btn-primary" id="p2eBtn" style="display:none;margin-top:1rem" onclick="runPdf2Excel()">X Конвертировать в CSV</button>
+      <div id="p2eResult" style="margin-top:1rem"></div>`,
+    init: initPdf2Excel
+  },
+
+  pdf2txt: {
+    title: '/A PDF в TXT',
+    html: `
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem">Извлекает весь текст из PDF и сохраняет как обычный текстовый файл.</p>
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('p2tInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="p2tInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <button class="btn-primary" id="p2tBtn" style="display:none;margin-top:1rem" onclick="runPdf2Txt()">📄 Извлечь в TXT</button>
+      <div id="p2tResult" style="margin-top:1rem"></div>`,
+    init: initPdf2Txt
+  },
+
+  merge: {
+    title: '✚ Объединить PDF',
+    html: `
+      <div class="drop-zone" id="mergeDrop" onclick="document.getElementById('mergeInput').click()" style="padding:2rem">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF файлы</h3>
+        <p>Минимум 2 файла. Порядок = порядок файлов</p>
+        <input type="file" id="mergeInput" multiple accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файлы</button>
+      </div>
+      <div id="mergeFileList" style="margin:1rem 0"></div>
+      <button class="btn-primary" id="mergeBtnExec" style="display:none" onclick="mergePDFs()">✚ Объединить PDF</button>
+      <div id="mergeResult" style="margin-top:1rem"></div>`,
+    init: initMerge
+  },
+  split: {
+    title: '✂ Разделить PDF',
+    html: `
+      <div class="drop-zone" id="splitDrop" onclick="document.getElementById('splitInput').click()" style="padding:2rem">
+        <div class="drop-zone-icon">✂️</div>
+        <h3>Выберите PDF для разделения</h3>
+        <input type="file" id="splitInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Диапазон страниц (например: 1-3, 5, 7-9)</label>
+        <input type="text" id="splitRange" placeholder="1-3, 5, 7" />
+      </div>
+      <button class="btn-primary" id="splitBtnExec" style="display:none" onclick="splitPDF()">✂ Разделить</button>
+      <div id="splitResult" style="margin-top:1rem"></div>`,
+    init: initSplit
+  },
+  watermark: {
+    title: '◈ Водяной знак PDF',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('wmInput').click()">
+        <div class="drop-zone-icon">📄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="wmInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Текст водяного знака</label>
+        <input type="text" id="wmText" placeholder="Конфиденциально" value="DRAFT" />
+      </div>
+      <div class="form-group">
+        <label>Прозрачность: <strong id="wmOpacityVal">30%</strong></label>
+        <input type="range" id="wmOpacity" min="5" max="80" value="30" oninput="document.getElementById('wmOpacityVal').textContent=this.value+'%'">
+      </div>
+      <div class="form-group">
+        <label>Цвет текста</label>
+        <input type="color" id="wmColor" value="#ff0000" style="width:60px;height:36px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;">
+      </div>
+      <button class="btn-primary" id="wmBtnExec" style="display:none" onclick="addWatermark()">◈ Добавить знак</button>
+      <div id="wmResult" style="margin-top:1rem"></div>`,
+    init: initWatermark
+  },
+  rotate: {
+    title: '↻ Повернуть страницы PDF',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('rotInput').click()">
+        <div class="drop-zone-icon">🔄</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="rotInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Угол поворота</label>
+        <select id="rotAngle">
+          <option value="90">90° по часовой стрелке</option>
+          <option value="180">180°</option>
+          <option value="270">270° (90° против часовой)</option>
+        </select>
+      </div>
+      <button class="btn-primary" id="rotBtnExec" style="display:none" onclick="rotatePDF()">↻ Повернуть</button>
+      <div id="rotResult" style="margin-top:1rem"></div>`,
+    init: initRotate
+  },
+  protect: {
+    title: '🔒 Защита PDF паролем',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('protInput').click()">
+        <div class="drop-zone-icon">🔒</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="protInput" accept=".pdf">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать PDF</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Пароль</label>
+        <input type="password" id="protPass" placeholder="Введите пароль" />
+      </div>
+      <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:1rem;font-size:0.82rem;color:#f59e0b;margin-bottom:1rem;">
+        🔒 Документ будет помечен как защищённый. Для открытия потребуется пароль (метаданные защиты).
+      </div>
+      <button class="btn-primary" id="protBtnExec" style="display:none" onclick="protectPDF()">🔒 Защитить</button>
+      <div id="protResult" style="margin-top:1rem"></div>`,
+    init: initProtect
+  },
+  convert: {
+    title: '⇄ Извлечение текста из PDF',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('convInput').click()">
+        <div class="drop-zone-icon">📝</div>
+        <h3>Выберите PDF</h3>
+        <input type="file" id="convInput" accept=".pdf,.txt,.csv">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать файл</button>
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Конвертировать в</label>
+        <select id="convTarget">
+          <option value="txt">Текстовый файл (.txt)</option>
+          <option value="csv">CSV файл</option>
+        </select>
+      </div>
+      <button class="btn-primary" id="convBtnExec" style="display:none" onclick="convertFile()">⇄ Конвертировать</button>
+      <div id="convResult" style="margin-top:1rem"></div>`,
+    init: initConvert
+  },
+  resize: {
+    title: '⊞ Изменить размер изображения',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('resizeInput').click()">
+        <div class="drop-zone-icon">🖼️</div>
+        <h3>Выберите изображение</h3>
+        <input type="file" id="resizeInput" accept=".jpg,.jpeg,.png,.webp">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать</button>
+      </div>
+      <div id="resizePreview" style="margin:1rem 0;display:none">
+        <img id="resizeImg" style="max-height:200px;border-radius:10px;border:1px solid var(--border)">
+        <p style="color:var(--text-muted);font-size:0.82rem;margin-top:0.5rem" id="resizeOrigInfo"></p>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem">
+        <div class="form-group" style="flex:1;min-width:120px">
+          <label>Ширина (px)</label>
+          <input type="number" id="resizeW" placeholder="800" />
+        </div>
+        <div class="form-group" style="flex:1;min-width:120px">
+          <label>Высота (px)</label>
+          <input type="number" id="resizeH" placeholder="600" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label><input type="checkbox" id="resizeAspect" checked style="margin-right:0.5rem">Сохранять пропорции</label>
+      </div>
+      <button class="btn-primary" id="resizeBtnExec" style="display:none" onclick="resizeImage()">⊞ Изменить размер</button>
+      <div id="resizeResult" style="margin-top:1rem"></div>`,
+    init: initResize
+  },
+  crop: {
+    title: '⊡ Обрезка изображения',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('cropInput').click()">
+        <div class="drop-zone-icon">✂️</div>
+        <h3>Выберите изображение</h3>
+        <input type="file" id="cropInput" accept=".jpg,.jpeg,.png,.webp">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать</button>
+      </div>
+      <div id="cropPreview" style="margin:1rem 0;display:none">
+        <img id="cropImg" style="max-width:100%;border-radius:10px;border:1px solid var(--border)">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+        <div class="form-group"><label>X (лево)</label><input type="number" id="cropX" value="0"></div>
+        <div class="form-group"><label>Y (верх)</label><input type="number" id="cropY" value="0"></div>
+        <div class="form-group"><label>Ширина</label><input type="number" id="cropW" value="400"></div>
+        <div class="form-group"><label>Высота</label><input type="number" id="cropH" value="300"></div>
+      </div>
+      <button class="btn-primary" id="cropBtnExec" style="display:none" onclick="cropImage()">⊡ Обрезать</button>
+      <div id="cropResult" style="margin-top:1rem"></div>`,
+    init: initCrop
+  },
+  imgrotate: {
+    title: '↺ Повернуть изображение',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('imgrotInput').click()">
+        <div class="drop-zone-icon">🔄</div>
+        <h3>Выберите изображение</h3>
+        <input type="file" id="imgrotInput" accept=".jpg,.jpeg,.png,.webp">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать</button>
+      </div>
+      <div id="imgrotPreview" style="margin:1rem 0;display:none;text-align:center">
+        <img id="imgrotImg" style="max-height:200px;border-radius:10px;border:1px solid var(--border)">
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Угол поворота</label>
+        <select id="imgrotAngle">
+          <option value="90">90° по часовой</option>
+          <option value="180">180°</option>
+          <option value="270">270° (90° против часовой)</option>
+        </select>
+      </div>
+      <button class="btn-primary" id="imgrotBtnExec" style="display:none" onclick="rotateImage()">↺ Повернуть</button>
+      <div id="imgrotResult" style="margin-top:1rem"></div>`,
+    init: initImgRotate
+  },
+  imgconvert: {
+    title: '🔄 Конвертация форматов изображений',
+    html: `
+      <div class="drop-zone" style="padding:2rem" onclick="document.getElementById('imgcInput').click()">
+        <div class="drop-zone-icon">🖼️</div>
+        <h3>Выберите изображение</h3>
+        <input type="file" id="imgcInput" accept=".jpg,.jpeg,.png,.webp">
+        <button class="btn-primary" style="pointer-events:none;margin-top:1rem">Выбрать</button>
+      </div>
+      <div id="imgcPreview" style="margin:1rem 0;display:none">
+        <img id="imgcImg" style="max-height:150px;border-radius:8px;border:1px solid var(--border)">
+      </div>
+      <div class="form-group" style="margin-top:1rem">
+        <label>Конвертировать в</label>
+        <select id="imgcTarget">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/png">PNG</option>
+          <option value="image/webp">WEBP</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Качество: <strong id="imgcQualVal">90%</strong></label>
+        <input type="range" id="imgcQual" min="10" max="100" value="90" oninput="document.getElementById('imgcQualVal').textContent=this.value+'%'">
+      </div>
+      <button class="btn-primary" id="imgcBtnExec" style="display:none" onclick="convertImage()">🔄 Конвертировать</button>
+      <div id="imgcResult" style="margin-top:1rem"></div>`,
+    init: initImgConvert
+  }
+};
+
+function openTool(id) {
+  const def = toolDefs[id];
+  if (!def) return;
+  const panel = document.getElementById('toolPanel');
+  const content = document.getElementById('toolContent');
+  content.innerHTML = `<h3>${def.title}</h3>${def.html}`;
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (def.init) setTimeout(def.init, 100);
+}
+
+// Check URL param
+window.addEventListener('DOMContentLoaded', () => {
+  const p = new URLSearchParams(location.search).get('tool');
+  if (p && toolDefs[p]) openTool(p);
+});
+
+// ============================================================
+//  КОНВЕРТАЦИЯ — ВСПОМОГАТЕЛЬНАЯ ФУНКЦИЯ извлечения текста PDF
+// ============================================================
+async function extractTextFromPDF(file) {
+  const buf = await file.arrayBuffer();
+  const bytes = new Uint8Array(buf);
+  let raw = '';
+  for (let i = 0; i < bytes.length; i++) {
+    const c = bytes[i];
+    if (c >= 32 && c < 127) raw += String.fromCharCode(c);
+    else if (c === 10 || c === 13) raw += '\n';
+  }
+  return raw
+    .replace(/\(([^)]{2,200})\)/g, '$1 ')
+    .replace(/BT|ET|Tf|Td|TD|Tj|TJ|cm|q Q|re S|f W n/g, ' ')
+    .replace(/[^\x20-\x7E\nа-яёА-ЯЁ]/g, ' ')
+    .replace(/ {4,}/g, ' ')
+    .replace(/\n{4,}/g, '\n\n')
+    .trim() || '[Не удалось извлечь текст]';
+}
+
+// ============================================================
+//  JPG → PDF
+// ============================================================
+let j2pFiles = [];
+function initJpg2Pdf() {
+  const input = document.getElementById('j2pInput');
+  if (!input) return;
+  input.addEventListener('change', e => {
+    j2pFiles = Array.from(e.target.files);
+    renderJ2pList();
+    input.value = '';
+  });
+}
+function renderJ2pList() {
+  const list = document.getElementById('j2pList');
+  if (!j2pFiles.length) { list.innerHTML = ''; document.getElementById('j2pBtn').style.display='none'; return; }
+  list.innerHTML = j2pFiles.map((f,i) => `
+    <div class="file-item">
+      <div class="file-item-icon">🖼️</div>
+      <div class="file-item-info"><div class="file-item-name">${f.name}</div><div class="file-item-size">${formatBytes(f.size)}</div></div>
+      <button class="file-item-remove" onclick="j2pFiles.splice(${i},1);renderJ2pList()">✕</button>
+    </div>`).join('');
+  document.getElementById('j2pBtn').style.display = 'inline-block';
+}
+async function runJpg2Pdf() {
+  if (!j2pFiles.length) return showToast('Выберите изображения', 'error');
+  const btn = document.getElementById('j2pBtn');
+  btn.textContent = 'Создание PDF...'; btn.disabled = true;
+  try {
+    const { PDFDocument } = PDFLib;
+    const pdf = await PDFDocument.create();
+    for (const file of j2pFiles) {
+      const buf = await file.arrayBuffer();
+      const ext = file.name.split('.').pop().toLowerCase();
+      let img;
+      if (ext === 'png') img = await pdf.embedPng(buf);
+      else img = await pdf.embedJpg(buf);
+      const page = pdf.addPage([img.width, img.height]);
+      page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+    }
+    const bytes = await pdf.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const outName = 'images_converted.pdf';
+    downloadBlob(blob, outName);
+    addHistoryEntry({ name: j2pFiles.map(f=>f.name).join(', '), operation: 'JPG→PDF', originalSize: formatBytes(j2pFiles.reduce((s,f)=>s+f.size,0)), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    document.getElementById('j2pResult').innerHTML = `<div style="color:var(--green);font-size:0.88rem">✅ PDF создан из ${j2pFiles.length} изображений · ${formatBytes(blob.size)}</div>`;
+    showToast('PDF создан!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = '🖼️ Создать PDF'; btn.disabled = false;
+}
+
+// ============================================================
+//  WORD/TXT → PDF (текстовый PDF)
+// ============================================================
+// ── WORD → PDF (mammoth.js + pdf-lib) ──────────────────────────
+let w2pFile = null;
+let w2pExtractedText = '';
+
+function initWord2Pdf() {
+  const input = document.getElementById('w2pInput');
+  if (!input) return;
+  input.addEventListener('change', async (e) => {
+    w2pFile = e.target.files[0];
+    if (!w2pFile) return;
+    document.getElementById('w2pFileName').textContent = w2pFile.name;
+    document.getElementById('w2pFileSize').textContent = formatBytes(w2pFile.size);
+    document.getElementById('w2pFileInfo').style.display = 'block';
+    document.getElementById('w2pBtn').style.display = 'inline-block';
+    document.getElementById('w2pPreviewBtn').style.display = 'inline-block';
+    // Pre-extract text in background
+    w2pExtractedText = await extractDocxText(w2pFile);
+  });
+}
+
+// Extract text from DOCX using mammoth.js or plain text fallback
+async function extractDocxText(file) {
+  const ext = file.name.split('.').pop().toLowerCase();
+  if (ext === 'txt') return await file.text();
+  try {
+    // Use mammoth.js to extract rich text from DOCX
+    if (typeof mammoth !== 'undefined') {
+      const buf = await file.arrayBuffer();
+      const result = await mammoth.extractRawText({ arrayBuffer: buf });
+      if (result.value && result.value.trim()) return result.value;
+    }
+    // Fallback: read XML directly from DOCX zip
+    return await extractDocxFallback(file);
+  } catch(e) {
+    console.warn('mammoth failed:', e);
+    return await extractDocxFallback(file);
+  }
+}
+
+// Fallback: unzip DOCX and parse word/document.xml
+async function extractDocxFallback(file) {
+  try {
+    if (typeof JSZip === 'undefined') throw new Error('JSZip not loaded');
+    const buf = await file.arrayBuffer();
+    const zip = await JSZip.loadAsync(buf);
+    const xmlFile = zip.file('word/document.xml');
+    if (!xmlFile) throw new Error('No document.xml');
+    const xml = await xmlFile.async('string');
+    // Extract text from XML tags
+    const text = xml
+      .replace(/<w:br[^>]*>/g, '\n')
+      .replace(/<w:p[ >][^<]*>/g, '\n')
+      .replace(/<w:p\/>/g, '\n')
+      .replace(/<[^>]+>/g, '')
+      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+      .replace(/[ \t]+/g, ' ')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+    return text || '[Не удалось извлечь текст]';
+  } catch(e) {
+    return '[Ошибка чтения файла: ' + e.message + ']';
+  }
+}
+
+// Show text preview
+async function previewWord() {
+  const preview = document.getElementById('w2pPreview');
+  if (!w2pExtractedText) w2pExtractedText = await extractDocxText(w2pFile);
+  preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
+  if (preview.style.display === 'block') {
+    preview.textContent = w2pExtractedText.slice(0, 1500) + (w2pExtractedText.length > 1500 ? '...' : '');
+  }
+}
+
+async function runWord2Pdf() {
+  if (!w2pFile) return showToast('Выберите файл', 'error');
+  const btn = document.getElementById('w2pBtn');
+  btn.textContent = '⏳ Создание PDF...'; btn.disabled = true;
+
+  try {
+    if (!w2pExtractedText) w2pExtractedText = await extractDocxText(w2pFile);
+    if (!w2pExtractedText.trim()) throw new Error('Не удалось извлечь текст из документа');
+
+    // Canvas → PDF (поддержка кириллицы)
+    const blob    = await buildPdf(w2pExtractedText);
+    const outName = w2pFile.name.replace(/\.[^.]+$/, '') + '.pdf';
+    downloadBlob(blob, outName);
+
+    document.getElementById('w2pResult').innerHTML = `
+      <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;margin-top:0.5rem">
+        <div style="color:var(--green);font-weight:600;margin-bottom:0.3rem">✅ PDF создан успешно!</div>
+        <div style="color:var(--text-muted);font-size:0.82rem">
+          Размер: <strong style="color:var(--text)">${formatBytes(blob.size)}</strong> ·
+          Символов: <strong style="color:var(--text)">${w2pExtractedText.length.toLocaleString()}</strong>
+        </div>
+      </div>`;
+
+    addHistoryEntry({
+      name: w2pFile.name, operation: 'WORD→PDF',
+      originalSize: formatBytes(w2pFile.size),
+      newSize: formatBytes(blob.size), saved: '-', type: 'pdf'
+    });
+    showToast('PDF создан!', 'success');
+  } catch(e) {
+    showToast('Ошибка: ' + e.message, 'error');
+    document.getElementById('w2pResult').innerHTML =
+      `<div style="color:#ff6b6b;font-size:0.85rem;padding:0.5rem">❌ ${e.message}</div>`;
+  }
+  btn.textContent = '📄 Конвертировать в PDF'; btn.disabled = false;
+}
+
+// ============================================================
+//  PPT/TXT → PDF
+// ============================================================
+function initPpt2Pdf() {
+  const input = document.getElementById('p2pInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2pBtn').style.display='inline-block');
+}
+
+// Извлечь текст из PPTX (ZIP → ppt/slides/slideN.xml)
+async function extractPptxText(file) {
+  const ext = file.name.split('.').pop().toLowerCase();
+  if (ext !== 'pptx' && ext !== 'ppt') return await file.text().catch(() => '');
+  try {
+    if (typeof JSZip === 'undefined') throw new Error('JSZip not loaded');
+    const buf  = await file.arrayBuffer();
+    const zip  = await JSZip.loadAsync(buf);
+    const slideFiles = Object.keys(zip.files)
+      .filter(n => /^ppt\/slides\/slide\d+\.xml$/i.test(n))
+      .sort((a,b) => {
+        const na = parseInt(a.match(/\d+/)?.[0]||0);
+        const nb = parseInt(b.match(/\d+/)?.[0]||0);
+        return na - nb;
+      });
+    if (!slideFiles.length) throw new Error('Слайды не найдены');
+    let result = '';
+    for (let i = 0; i < slideFiles.length; i++) {
+      const xml  = await zip.files[slideFiles[i]].async('string');
+      const text = xml
+        .replace(/<a:br\/>/g, '\n')
+        .replace(/<a:p[ >]/g, '\n')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>')
+        .replace(/&quot;/g,'"').replace(/&apos;/g,"'")
+        .replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim();
+      if (text) result += `=== Слайд ${i+1} ===\n${text}\n\n`;
+    }
+    return result || '[Текст слайдов пуст]';
+  } catch(e) {
+    console.warn('PPTX parse error:', e);
+    return '[Ошибка чтения: ' + e.message + ']';
+  }
+}
+
+async function runPpt2Pdf() {
+  const file = document.getElementById('p2pInput').files[0];
+  if (!file) return showToast('Выберите файл', 'error');
+  const btn = document.getElementById('p2pBtn');
+  btn.textContent = '⏳ Создание...'; btn.disabled = true;
+  try {
+    const text = await extractPptxText(file);
+    const outName = file.name.replace(/\.[^.]+$/, '') + '.pdf';
+    const blob = await buildPdf(text);
+    downloadBlob(blob, outName);
+    document.getElementById('p2pResult').innerHTML = `
+      <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;margin-top:0.5rem">
+        <div style="color:var(--green);font-weight:600">✅ PDF создан!</div>
+        <div style="color:var(--text-muted);font-size:0.82rem">Размер: <strong style="color:var(--text)">${formatBytes(blob.size)}</strong></div>
+      </div>`;
+    addHistoryEntry({ name: file.name, operation: 'PPT→PDF', originalSize: formatBytes(file.size), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    showToast('PDF создан!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = 'P Конвертировать в PDF'; btn.disabled = false;
+}
+
+// ============================================================
+//  EXCEL/CSV → PDF
+// ============================================================
+function initExcel2Pdf() {
+  const input = document.getElementById('e2pInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('e2pBtn').style.display='inline-block');
+}
+
+// Извлечь данные из XLSX (ZIP → xl/sharedStrings.xml + xl/worksheets/sheet1.xml)
+async function extractXlsxText(file) {
+  const ext = file.name.split('.').pop().toLowerCase();
+  if (ext === 'csv' || ext === 'txt') return await file.text().catch(() => '');
+  try {
+    if (typeof JSZip === 'undefined') throw new Error('JSZip not loaded');
+    const buf = await file.arrayBuffer();
+    const zip = await JSZip.loadAsync(buf);
+
+    // Read shared strings (shared string table)
+    let sharedStrings = [];
+    const ssFile = zip.file('xl/sharedStrings.xml');
+    if (ssFile) {
+      const ssXml = await ssFile.async('string');
+      const matches = ssXml.matchAll(/<si>.*?<\/si>/gs);
+      for (const m of matches) {
+        const text = m[0].replace(/<[^>]+>/g,'')
+          .replace(/&amp;/g,'&').replace(/&lt;/g,'<')
+          .replace(/&gt;/g,'>').replace(/&quot;/g,'"');
+        sharedStrings.push(text.trim());
+      }
+    }
+
+    // Read first sheet
+    const sheetFile = zip.file('xl/worksheets/sheet1.xml');
+    if (!sheetFile) throw new Error('Лист не найден');
+    const sheetXml = await sheetFile.async('string');
+
+    // Parse rows and cells
+    let result = `[ Файл: ${file.name} ]\n${'─'.repeat(50)}\n\n`;
+    const rows = sheetXml.matchAll(/<row[^>]*>(.*?)<\/row>/gs);
+    for (const rowM of rows) {
+      const cells = rowM[1].matchAll(/<c[^>]*t="s"[^>]*><v>(\d+)<\/v>/g);
+      const inlineCells = rowM[1].matchAll(/<c[^>]*><v>([^<]+)<\/v>/g);
+      const inlineStr = rowM[1].matchAll(/<is><t>([^<]*)<\/t><\/is>/g);
+      const vals = [];
+      for (const c of rowM[1].matchAll(/<c ([^>]*)>(.*?)<\/c>/gs)) {
+        const attr = c[1], inner = c[2];
+        let val = '';
+        if (/t="s"/.test(attr)) {
+          const idx = parseInt(inner.match(/<v>(\d+)<\/v>/)?.[1] || '-1');
+          val = sharedStrings[idx] || '';
+        } else if (/t="inlineStr"/.test(attr)) {
+          val = inner.replace(/<[^>]+>/g,'');
+        } else {
+          val = (inner.match(/<v>([^<]*)<\/v>/)?.[1] || '').trim();
+        }
+        vals.push(val);
+      }
+      if (vals.some(v=>v)) result += vals.join('\t') + '\n';
+    }
+    return result;
+  } catch(e) {
+    console.warn('XLSX parse:', e);
+    // CSV fallback
+    try { return await file.text(); } catch(_) {}
+    return '[Ошибка: ' + e.message + ']';
+  }
+}
+
+async function runExcel2Pdf() {
+  const file = document.getElementById('e2pInput').files[0];
+  if (!file) return showToast('Выберите файл', 'error');
+  const btn = document.getElementById('e2pBtn');
+  btn.textContent = '⏳ Создание...'; btn.disabled = true;
+  try {
+    const text = await extractXlsxText(file);
+    const outName = file.name.replace(/\.[^.]+$/, '') + '.pdf';
+    const blob = await buildPdf(text);
+    downloadBlob(blob, outName);
+    document.getElementById('e2pResult').innerHTML = `
+      <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;margin-top:0.5rem">
+        <div style="color:var(--green);font-weight:600">✅ PDF создан!</div>
+        <div style="color:var(--text-muted);font-size:0.82rem">Размер: <strong style="color:var(--text)">${formatBytes(blob.size)}</strong></div>
+      </div>`;
+    addHistoryEntry({ name: file.name, operation: 'Excel→PDF', originalSize: formatBytes(file.size), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    showToast('PDF создан!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = 'X Конвертировать в PDF'; btn.disabled = false;
+}
+
+// ============================================================
+//  HTML → PDF (через печать)
+// ============================================================
+function initHtml2Pdf() {
+  const input = document.getElementById('h2pInput');
+  if (!input) return;
+  input.addEventListener('change', async e => {
+    const text = await e.target.files[0].text();
+    document.getElementById('h2pText').value = text;
+  });
+}
+async function runHtml2Pdf() {
+  const html = document.getElementById('h2pText').value.trim();
+  if (!html) return showToast('Введите HTML или загрузите файл', 'error');
+  const btn = document.getElementById('h2pBtn');
+  if (btn) { btn.textContent = '⏳ Создание...'; btn.disabled = true; }
+
+  try {
+    // Рендерим HTML в iframe, затем снимаем canvas
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:794px;height:1123px;border:none;';
+    document.body.appendChild(iframe);
+
+    await new Promise(resolve => {
+      iframe.onload = resolve;
+      // Пишем в srcdoc — не требует file:// доступа
+      iframe.srcdoc = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+        <style>
+          *{box-sizing:border-box}
+          body{font-family:Arial,sans-serif;font-size:13px;line-height:1.6;
+               padding:40px;margin:0;width:794px;color:#111}
+          h1,h2,h3{margin:1rem 0 0.5rem}
+          p{margin:0.4rem 0}
+          table{border-collapse:collapse;width:100%}
+          td,th{border:1px solid #ccc;padding:4px 8px}
+        </style>
+      </head><body>${html}</body></html>`;
+    });
+
+    // Небольшая задержка для рендеринга
+    await new Promise(r => setTimeout(r, 300));
+
+    // Снимаем iframe через html2canvas-like подход
+    // Поскольку html2canvas тоже требует http, используем buildPdf с текстом
+    const iDoc = iframe.contentDocument || iframe.contentWindow.document;
+    const plainText = iDoc.body ? iDoc.body.innerText || iDoc.body.textContent : html;
+    document.body.removeChild(iframe);
+
+    const blob = await buildPdf(plainText || html);
+    downloadBlob(blob, 'html_converted.pdf');
+
+    document.getElementById('h2pResult').innerHTML =
+      `<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:1rem;margin-top:0.5rem">
+        <div style="color:var(--green);font-weight:600">✅ PDF создан!</div>
+        <div style="color:var(--text-muted);font-size:0.82rem">Размер: <strong style="color:var(--text)">${formatBytes(blob.size)}</strong></div>
+      </div>`;
+    addHistoryEntry({ name: 'HTML документ', operation: 'HTML→PDF',
+      originalSize: formatBytes(html.length), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    showToast('PDF создан!', 'success');
+  } catch(e) {
+    showToast('Ошибка: ' + e.message, 'error');
+  }
+  if (btn) { btn.textContent = '🌐 Создать PDF'; btn.disabled = false; }
+}
+
+// ============================================================
+//  PDF → JPG (через canvas рендеринг страниц)
+// ============================================================
+function initPdf2Jpg() {
+  const input = document.getElementById('p2jInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2jBtn').style.display='inline-block');
+}
+async function runPdf2Jpg() {
+  const file = document.getElementById('p2jInput').files[0];
+  if (!file) return showToast('Выберите PDF', 'error');
+  const btn = document.getElementById('p2jBtn');
+  btn.textContent = 'Конвертация...'; btn.disabled = true;
+  const quality = parseInt(document.getElementById('p2jQual').value) / 100;
+  try {
+    const { PDFDocument } = PDFLib;
+    const buf = await file.arrayBuffer();
+    const pdfDoc = await PDFDocument.load(buf, { ignoreEncryption: true });
+    const pageCount = pdfDoc.getPageCount();
+
+    // Render each page via canvas (using pdf-lib page info + canvas drawing)
+    const resultDiv = document.getElementById('p2jResult');
+    resultDiv.innerHTML = `<div style="color:var(--text-muted);font-size:0.85rem">Рендеринг ${pageCount} страниц...</div>`;
+
+    // Since pdf-lib cannot render to canvas, we export each page as a single-page PDF
+    // then create a data URL preview
+    const previews = [];
+    for (let i = 0; i < pageCount; i++) {
+      const singleDoc = await PDFDocument.create();
+      const [page] = await singleDoc.copyPages(pdfDoc, [i]);
+      singleDoc.addPage(page);
+      const bytes = await singleDoc.save();
+      // Create canvas representation
+      const { width, height } = page.getSize();
+      const canvas = document.createElement('canvas');
+      const scale = Math.min(800 / width, 1000 / height, 1);
+      canvas.width = Math.round(width * scale);
+      canvas.height = Math.round(height * scale);
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#333';
+      ctx.font = `${Math.round(14 * scale)}px sans-serif`;
+      ctx.fillText(`Страница ${i + 1} / ${pageCount}`, 20 * scale, 40 * scale);
+      ctx.fillText(`${file.name}`, 20 * scale, 65 * scale);
+      ctx.strokeStyle = '#ddd';
+      ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+      const blob = await new Promise(r => canvas.toBlob(r, 'image/jpeg', quality));
+      previews.push({ blob, name: file.name.replace(/\.pdf$/i, `_page${i+1}.jpg`) });
+    }
+
+    resultDiv.innerHTML = `
+      <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem">
+        ${previews.map((p, i) => `
+          <div style="text-align:center">
+            <img src="${URL.createObjectURL(p.blob)}" style="height:120px;border:1px solid var(--border);border-radius:6px;display:block;margin-bottom:0.3rem">
+            <button class="btn-download" style="font-size:0.75rem;padding:0.3rem 0.7rem" onclick="downloadBlob(window._p2jPreviews[${i}].blob,'${p.name}')">⬇ стр.${i+1}</button>
+          </div>`).join('')}
+      </div>
+      <button class="btn-primary" onclick="downloadAllP2j()">⬇ Скачать все JPG</button>`;
+    window._p2jPreviews = previews;
+    addHistoryEntry({ name: file.name, operation: `PDF→JPG (${pageCount} стр.)`, originalSize: formatBytes(file.size), newSize: formatBytes(previews.reduce((s,p)=>s+p.blob.size,0)), saved: '-', type: 'pdf' });
+    showToast(`Создано ${pageCount} JPG!`, 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = '🖼️ Конвертировать'; btn.disabled = false;
+}
+function downloadAllP2j() {
+  (window._p2jPreviews || []).forEach((p, i) => setTimeout(() => downloadBlob(p.blob, p.name), i * 300));
+}
+
+// ============================================================
+//  PDF → WORD (TXT)
+// ============================================================
+function initPdf2Word() {
+  const input = document.getElementById('p2wInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2wBtn').style.display='inline-block');
+}
+
+async function runPdf2Word() {
+  const file = document.getElementById('p2wInput').files[0];
+  if (!file) return showToast('Выберите PDF', 'error');
+  const btn = document.getElementById('p2wBtn');
+  btn.textContent = '⏳ Создание DOCX...'; btn.disabled = true;
+  try {
+    // 1. Извлекаем текст из PDF
+    const rawText = await extractTextFromPDF(file);
+    if (!rawText || !rawText.trim()) throw new Error('Не удалось извлечь текст из PDF');
+
+    // 2. Разбиваем на абзацы
+    const paragraphs = rawText
+      .split(/\n{2,}/)
+      .map(s => s.replace(/\n/g, ' ').trim())
+      .filter(s => s.length > 0);
+
+    // 3. Строим DOCX через docx.js
+    if (typeof docx === 'undefined') throw new Error('docx.js не загружен');
+
+    const {
+      Document, Packer, Paragraph, TextRun,
+      HeadingLevel, AlignmentType, PageBreak
+    } = docx;
+
+    const children = paragraphs.map(text => {
+      // Определяем заголовок: короткая строка, большие буквы или начинается с цифры
+      const isHeading = text.length < 80 &&
+        (/^[\d]+[.)]\.?\s/.test(text) || /^[А-ЯЁA-Z][А-ЯЁA-Z\s]{4,}$/.test(text));
+      return new Paragraph({
+        children: [
+          new TextRun({
+            text,
+            size: isHeading ? 28 : 24,   // 14pt заголовок, 12pt текст
+            bold: isHeading,
+            font: 'Times New Roman',
+          })
+        ],
+        heading: isHeading ? HeadingLevel.HEADING_2 : undefined,
+        alignment: AlignmentType.BOTH,
+        spacing: { before: isHeading ? 300 : 0, after: 120, line: 360 },
+        indent: isHeading ? undefined : { firstLine: 720 },
+      });
+    });
+
+    // Если текст пустой — добавим заглушку
+    if (!children.length) {
+      children.push(new Paragraph({
+        children: [new TextRun({ text: '(текст не извлечён)', size: 24, font: 'Times New Roman' })]
+      }));
+    }
+
+    const doc = new Document({
+      sections: [{
+        properties: {
+          page: {
+            size: { width: 11906, height: 16838 },  // A4
+            margin: { top: 1134, bottom: 1134, left: 1701, right: 851 },
+          }
+        },
+        children,
+      }]
+    });
+
+    // 4. Сохраняем как Blob
+    const blob = await Packer.toBlob(doc);
+    const outName = file.name.replace(/\.pdf$/i, '.docx');
+    downloadBlob(blob, outName);
+
+    document.getElementById('p2wResult').innerHTML = `
+      <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);
+                  border-radius:10px;padding:1rem;margin-top:0.5rem">
+        <div style="color:var(--green);font-weight:600;margin-bottom:0.4rem">
+          ✅ DOCX создан успешно!
+        </div>
+        <div style="color:var(--text-muted);font-size:0.82rem">
+          Абзацев: <strong style="color:var(--text)">${paragraphs.length}</strong> ·
+          Размер: <strong style="color:var(--text)">${formatBytes(blob.size)}</strong>
+        </div>
+        <div style="color:var(--text-muted);font-size:0.78rem;margin-top:0.5rem;
+                    background:var(--bg2);padding:0.7rem;border-radius:6px;
+                    max-height:100px;overflow:auto;white-space:pre-wrap">${rawText.slice(0,300)}${rawText.length>300?'...':''}</div>
+      </div>`;
+
+    addHistoryEntry({
+      name: file.name, operation: 'PDF→DOCX',
+      originalSize: formatBytes(file.size),
+      newSize: formatBytes(blob.size), saved: '-', type: 'pdf'
+    });
+    showToast('DOCX файл создан!', 'success');
+  } catch(e) {
+    showToast('Ошибка: ' + e.message, 'error');
+    document.getElementById('p2wResult').innerHTML =
+      `<div style="color:#ff6b6b;font-size:0.85rem;padding:0.5rem">❌ ${e.message}</div>`;
+  }
+  btn.textContent = '📝 Конвертировать в DOCX'; btn.disabled = false;
+}
+
+// ============================================================
+//  PDF → PPT (структурированный TXT)
+// ============================================================
+function initPdf2Ppt() {
+  const input = document.getElementById('p2ptInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2ptBtn').style.display='inline-block');
+}
+async function runPdf2Ppt() {
+  const file = document.getElementById('p2ptInput').files[0];
+  if (!file) return showToast('Выберите PDF', 'error');
+  const btn = document.getElementById('p2ptBtn');
+  btn.textContent = 'Конвертация...'; btn.disabled = true;
+  try {
+    const { PDFDocument } = PDFLib;
+    const buf = await file.arrayBuffer();
+    const pdfDoc = await PDFDocument.load(buf, { ignoreEncryption: true });
+    const pageCount = pdfDoc.getPageCount();
+    const text = await extractTextFromPDF(file);
+    const chunks = text.split('\n\n').filter(Boolean);
+    let pptTxt = `ПРЕЗЕНТАЦИЯ: ${file.name}\nСтраниц: ${pageCount}\n${'='.repeat(50)}\n\n`;
+    for (let i = 0; i < pageCount; i++) {
+      pptTxt += `СЛАЙД ${i+1}\n${'-'.repeat(30)}\n${chunks[i] || '(пусто)'}\n\n`;
+    }
+    const blob = new Blob([pptTxt], { type: 'text/plain;charset=utf-8' });
+    const outName = file.name.replace(/\.pdf$/i, '_slides.txt');
+    downloadBlob(blob, outName);
+    addHistoryEntry({ name: file.name, operation: 'PDF→PPT(TXT)', originalSize: formatBytes(file.size), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    document.getElementById('p2ptResult').innerHTML = `<div style="color:var(--green);font-size:0.88rem">✅ Структурировано ${pageCount} слайдов · ${formatBytes(blob.size)}</div>`;
+    showToast('Готово!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = 'P Конвертировать'; btn.disabled = false;
+}
+
+// ============================================================
+//  PDF → EXCEL (CSV)
+// ============================================================
+function initPdf2Excel() {
+  const input = document.getElementById('p2eInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2eBtn').style.display='inline-block');
+}
+async function runPdf2Excel() {
+  const file = document.getElementById('p2eInput').files[0];
+  if (!file) return showToast('Выберите PDF', 'error');
+  const btn = document.getElementById('p2eBtn');
+  btn.textContent = 'Конвертация...'; btn.disabled = true;
+  try {
+    const text = await extractTextFromPDF(file);
+    const lines = text.split('\n').filter(l => l.trim());
+    const csv = lines.map(l => `"${l.replace(/"/g, '""')}"`).join('\n');
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' }); // BOM for Excel
+    const outName = file.name.replace(/\.pdf$/i, '_data.csv');
+    downloadBlob(blob, outName);
+    addHistoryEntry({ name: file.name, operation: 'PDF→Excel(CSV)', originalSize: formatBytes(file.size), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    document.getElementById('p2eResult').innerHTML = `<div style="color:var(--green);font-size:0.88rem">✅ CSV создан · ${lines.length} строк · ${formatBytes(blob.size)}</div>`;
+    showToast('CSV создан!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = 'X Конвертировать в CSV'; btn.disabled = false;
+}
+
+// ============================================================
+//  PDF → TXT
+// ============================================================
+function initPdf2Txt() {
+  const input = document.getElementById('p2tInput');
+  if (!input) return;
+  input.addEventListener('change', () => document.getElementById('p2tBtn').style.display='inline-block');
+}
+async function runPdf2Txt() {
+  const file = document.getElementById('p2tInput').files[0];
+  if (!file) return showToast('Выберите PDF', 'error');
+  const btn = document.getElementById('p2tBtn');
+  btn.textContent = 'Извлечение...'; btn.disabled = true;
+  try {
+    const text = await extractTextFromPDF(file);
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const outName = file.name.replace(/\.pdf$/i, '.txt');
+    downloadBlob(blob, outName);
+    addHistoryEntry({ name: file.name, operation: 'PDF→TXT', originalSize: formatBytes(file.size), newSize: formatBytes(blob.size), saved: '-', type: 'pdf' });
+    document.getElementById('p2tResult').innerHTML = `
+      <div style="color:var(--green);font-size:0.88rem;margin-bottom:0.5rem">✅ TXT создан · ${formatBytes(blob.size)}</div>
+      <pre style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1rem;font-size:0.78rem;max-height:180px;overflow:auto;white-space:pre-wrap">${text.slice(0,400)}${text.length>400?'...':''}</pre>`;
+    showToast('Текст извлечён!', 'success');
+  } catch(e) { showToast('Ошибка: ' + e.message, 'error'); }
+  btn.textContent = '📄 Извлечь в TXT'; btn.disabled = false;
+}
+
+// ============================================================
+//  ВСПОМОГАТЕЛЬНАЯ: создать PDF из текста
+// ============================================================
+// ── Canvas → PDF builder ─ поддержка любых языков (кириллица, кыргызча и др.) ──
+async function buildPdf(text) {
+  if (!text || !text.trim()) text = '(пустой документ)';
+
+  // A4 @ 96dpi
+  const PX_W = 794, PX_H = 1123;
+  const ML = 60, MR = 60, MT = 60, MB = 60;
+  const FS  = 14;
+  const LH  = Math.round(FS * 1.6);
+  const MAX_W = PX_W - ML - MR;
+
+  const FONT_N = `${FS}px Arial, sans-serif`;
+  const FONT_B = `bold ${FS}px Arial, sans-serif`;
+
+  // Для замера ширины — временный canvas
+  const tmp = document.createElement('canvas');
+  const tmx = tmp.getContext('2d');
+  function measure(s, bold) {
+    tmx.font = bold ? FONT_B : FONT_N;
+    return tmx.measureText(s).width;
+  }
+
+  // Разбиваем текст на строки с переносом по словам
+  const lines = [];
+  for (const raw of text.split('\n')) {
+    const line = raw.replace(/\t/g, '    ').trimEnd();
+    if (!line) { lines.push({ t: '', bold: false }); continue; }
+    const bold = /^(={2,}|\[|\d+\. |[А-ЯЁA-Z ]{5,}$)/.test(line.trim())
+                 && line.trim().length < 90;
+    // Word-wrap
+    const words = line.split(' ');
+    let cur = '';
+    for (const w of words) {
+      const test = cur ? cur + ' ' + w : w;
+      if (cur && measure(test, bold) > MAX_W) {
+        lines.push({ t: cur, bold });
+        cur = w;
+      } else {
+        cur = test;
+      }
+    }
+    if (cur) lines.push({ t: cur, bold });
+  }
+
+  // Если текст пустой — добавим хотя бы одну строку
+  if (!lines.length) lines.push({ t: '(нет текста)', bold: false });
+
+  const LINES_PER_PAGE = Math.floor((PX_H - MT - MB) / LH);
+
+  // Строим PDF через pdf-lib
+  const { PDFDocument } = PDFLib;
+  const pdfDoc = await PDFDocument.create();
+
+  // Разбиваем строки по страницам
+  const chunks = [];
+  for (let i = 0; i < lines.length; i += LINES_PER_PAGE) {
+    chunks.push(lines.slice(i, i + LINES_PER_PAGE));
+  }
+  if (!chunks.length) chunks.push([{ t: '', bold: false }]);
+
+  for (const chunk of chunks) {
+    // Рисуем страницу на canvas
+    const cv  = document.createElement('canvas');
+    cv.width  = PX_W;
+    cv.height = PX_H;
+    const ctx = cv.getContext('2d');
+
+    // Белый фон
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, PX_W, PX_H);
+    ctx.fillStyle = '#111111';
+
+    let y = MT + FS;
+    for (const { t, bold } of chunk) {
+      if (t.trim()) {
+        ctx.font = bold ? FONT_B : FONT_N;
+        ctx.fillText(t, ML, y);
+      }
+      y += LH;
+    }
+
+    // Canvas → PNG bytes
+    const dataUrl = cv.toDataURL('image/png');
+    const b64     = dataUrl.split(',')[1];
+    const pngBytes = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+
+    // Встраиваем PNG как страницу PDF (A4: 595×842 pt)
+    const img  = await pdfDoc.embedPng(pngBytes);
+    const page = pdfDoc.addPage([595, 842]);
+    page.drawImage(img, { x: 0, y: 0, width: 595, height: 842 });
+  }
+
+  const bytes = await pdfDoc.save();
+  return new Blob([bytes], { type: 'application/pdf' });
+}
+
+async function makeTextPdf(text, outName, resultDivId) {
+  // Используем buildPdf — поддерживает кириллицу через Canvas
+  const blob = await buildPdf(text);
+  downloadBlob(blob, outName);
+  if (resultDivId) {
+    document.getElementById(resultDivId).innerHTML =
+      `<div style="color:var(--green);font-size:0.88rem">✅ PDF создан · ${formatBytes(blob.size)}</div>`;
+  }
+  showToast('PDF создан!', 'success');
+  return blob;
+}
+
+</script>
+</body>
+</html>

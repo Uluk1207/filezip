@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileZip — Сжатие и оптимизация файлов</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a href="index.html" class="logo">File<span>Zip</span></a>
+  <ul class="nav-links">
+    <li><a href="compress.html">Сжатие</a></li>
+    <li><a href="tools.html">Инструменты</a></li>
+    <li><a href="history.html">История</a></li>
+    <li><a href="about.html">О проекте</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='compress.html'">Начать →</button>
+  <button class="burger" id="burger">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">100% в браузере · Без сервера · Бесплатно</div>
+    <h1 class="hero-title">Сжимайте файлы<br><span class="accent">мгновенно</span></h1>
+    <p class="hero-sub">PDF, изображения, документы — уменьшите размер файлов без потери качества прямо в браузере.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="location.href='compress.html'">Загрузить файл</button>
+      <button class="btn-ghost" onclick="location.href='tools.html'">Все инструменты</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">15+</span><span class="stat-label">форматов</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">80%</span><span class="stat-label">экономии</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">серверов</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="file-card fc1">
+      <div class="fc-icon">📄</div>
+      <div class="fc-info"><span>report.pdf</span><span class="fc-size">4.2 MB</span></div>
+      <div class="fc-arrow">↓</div>
+      <div class="fc-info"><span>report_c.pdf</span><span class="fc-size fc-green">1.1 MB</span></div>
+      <div class="fc-badge">−74%</div>
+    </div>
+    <div class="file-card fc2">
+      <div class="fc-icon">🖼️</div>
+      <div class="fc-info"><span>photo.jpg</span><span class="fc-size">8.5 MB</span></div>
+      <div class="fc-arrow">↓</div>
+      <div class="fc-info"><span>photo_c.jpg</span><span class="fc-size fc-green">1.8 MB</span></div>
+      <div class="fc-badge">−79%</div>
+    </div>
+    <div class="file-card fc3">
+      <div class="fc-icon">📊</div>
+      <div class="fc-info"><span>data.xlsx</span><span class="fc-size">2.1 MB</span></div>
+      <div class="fc-arrow">↓</div>
+      <div class="fc-info"><span>data_c.xlsx</span><span class="fc-size fc-green">0.6 MB</span></div>
+      <div class="fc-badge">−71%</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS GRID -->
+<section class="tools-section">
+  <div class="section-header">
+    <h2>Все инструменты</h2>
+    <p>Полный набор для работы с файлами</p>
+  </div>
+  <div class="tools-grid">
+    <a href="compress.html?type=pdf" class="tool-card">
+      <div class="tool-icon" style="background:#ff5f5f22;color:#ff5f5f">PDF</div>
+      <h3>Сжать PDF</h3>
+      <p>Уменьшите размер PDF без потери качества</p>
+    </a>
+    <a href="compress.html?type=image" class="tool-card">
+      <div class="tool-icon" style="background:#5f9fff22;color:#5f9fff">IMG</div>
+      <h3>Сжать изображение</h3>
+      <p>JPG, PNG, WEBP — быстрое сжатие</p>
+    </a>
+    <a href="tools.html?tool=merge" class="tool-card">
+      <div class="tool-icon" style="background:#a855f722;color:#a855f7">✚</div>
+      <h3>Объединить PDF</h3>
+      <p>Соедините несколько PDF в один файл</p>
+    </a>
+    <a href="tools.html?tool=split" class="tool-card">
+      <div class="tool-icon" style="background:#22c55e22;color:#22c55e">✂</div>
+      <h3>Разделить PDF</h3>
+      <p>Разбейте PDF на отдельные страницы</p>
+    </a>
+    <a href="tools.html?tool=watermark" class="tool-card">
+      <div class="tool-icon" style="background:#f59e0b22;color:#f59e0b">◈</div>
+      <h3>Водяной знак</h3>
+      <p>Добавьте водяной знак на документ</p>
+    </a>
+    <a href="tools.html?tool=protect" class="tool-card">
+      <div class="tool-icon" style="background:#06b6d422;color:#06b6d4">🔒</div>
+      <h3>Защита PDF</h3>
+      <p>Установите пароль на PDF файл</p>
+    </a>
+    <a href="tools.html?tool=rotate" class="tool-card">
+      <div class="tool-icon" style="background:#f97316 22;color:#f97316">↻</div>
+      <h3>Повернуть страницы</h3>
+      <p>Поворот страниц PDF на 90°/180°</p>
+    </a>
+    <a href="tools.html?tool=convert" class="tool-card">
+      <div class="tool-icon" style="background:#ec489922;color:#ec4899">⇄</div>
+      <h3>Конвертация</h3>
+      <p>Конвертируйте файлы между форматами</p>
+    </a>
+    <a href="tools.html?tool=resize" class="tool-card">
+      <div class="tool-icon" style="background:#84cc1622;color:#84cc16">⊞</div>
+      <h3>Изменить размер</h3>
+      <p>Изменение размера изображений</p>
+    </a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-header">
+    <h2>Как это работает</h2>
+    <p>Три простых шага</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Загрузите файл</h3>
+      <p>Перетащите файл или выберите через диалог. Поддержка PDF, JPG, PNG, DOCX, XLSX и других форматов.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Настройте</h3>
+      <p>Выберите уровень сжатия: высокое, среднее или низкое. Все операции выполняются прямо в браузере.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Скачайте</h3>
+      <p>Получите сжатый файл. Посмотрите статистику: исходный размер, новый размер и процент экономии.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="formats-section">
+  <div class="section-header">
+    <h2>Поддерживаемые форматы</h2>
+  </div>
+  <div class="formats-grid">
+    <div class="format-group">
+      <h4>Документы</h4>
+      <div class="format-tags">
+        <span>PDF</span><span>DOC</span><span>DOCX</span><span>TXT</span><span>PPT</span><span>PPTX</span><span>XLS</span><span>XLSX</span>
+      </div>
+    </div>
+    <div class="format-group">
+      <h4>Изображения</h4>
+      <div class="format-tags">
+        <span>JPG</span><span>JPEG</span><span>PNG</span><span>WEBP</span>
+      </div>
+    </div>
+    <div class="format-group">
+      <h4>Другие</h4>
+      <div class="format-tags">
+        <span>ZIP</span><span>CSV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">File<span>Zip</span></div>
+    <p>Дипломный проект. Клиентское веб-приложение для сжатия файлов.</p>
+    <div class="footer-links">
+      <a href="index.html">Главная</a>
+      <a href="compress.html">Сжатие</a>
+      <a href="tools.html">Инструменты</a>
+      <a href="history.html">История</a>
+      <a href="about.html">О проекте</a>
+    </div>
+    <p class="footer-copy">© 2025 FileZip — Все операции выполняются в браузере</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте — FileZip</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="logo">File<span>Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="compress.html">Сжатие</a></li>
+    <li><a href="tools.html">Инструменты</a></li>
+    <li><a href="history.html">История</a></li>
+    <li><a href="about.html" style="color:var(--text)">О проекте</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='index.html'">← Главная</button>
+  <button class="burger" id="burger">☰</button>
+</nav>
+
+<div class="page-header">
+  <h1>О проекте</h1>
+  <p>Дипломная работа — веб-приложение для сжатия и оптимизации файлов</p>
+</div>
+
+<div class="about-section">
+
+  <div class="about-card">
+    <h3>📋 Описание проекта</h3>
+    <p>
+      <strong>FileZip</strong> — клиентское веб-приложение для сжатия, оптимизации и обработки документов и медиафайлов.
+      Приложение разработано как аналог сервисов iLovePDF и SmallPDF, но работающий полностью в браузере пользователя
+      без серверной части и без загрузки файлов на сторонние серверы.
+    </p>
+    <p style="margin-top:0.8rem">
+      Все операции по сжатию, конвертации и обработке файлов выполняются локально с использованием
+      возможностей современных браузеров и JavaScript-библиотек.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>🎯 Цель и задачи</h3>
+    <ul>
+      <li>Разработать современный пользовательский интерфейс в стиле iLovePDF</li>
+      <li>Реализовать сжатие PDF-документов с помощью pdf-lib</li>
+      <li>Реализовать сжатие изображений (JPG, PNG, WEBP) через Canvas API</li>
+      <li>Добавить инструменты для работы с PDF: объединение, разделение, поворот, водяной знак</li>
+      <li>Добавить инструменты для изображений: изменение размера, обрезка, конвертация, поворот</li>
+      <li>Сохранять историю операций в LocalStorage</li>
+      <li>Обеспечить полную работоспособность без сервера</li>
+    </ul>
+  </div>
+
+  <div class="about-card">
+    <h3>🛠 Технологии</h3>
+    <p style="margin-bottom:0.5rem">Стек разработки — только клиентские технологии:</p>
+    <div class="tech-chips">
+      <span class="tech-chip">HTML5</span>
+      <span class="tech-chip">CSS3</span>
+      <span class="tech-chip">Vanilla JavaScript</span>
+      <span class="tech-chip">pdf-lib 1.17</span>
+      <span class="tech-chip">FileSaver.js</span>
+      <span class="tech-chip">Canvas API</span>
+      <span class="tech-chip">File API</span>
+      <span class="tech-chip">LocalStorage</span>
+      <span class="tech-chip">Drag & Drop API</span>
+      <span class="tech-chip">Blob API</span>
+    </div>
+  </div>
+
+  <div class="about-card">
+    <h3>📂 Поддерживаемые форматы</h3>
+    <ul>
+      <li><strong>Документы:</strong> PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, CSV</li>
+      <li><strong>Изображения:</strong> JPG, JPEG, PNG, WEBP</li>
+      <li><strong>Архивы:</strong> ZIP</li>
+    </ul>
+  </div>
+
+  <div class="about-card">
+    <h3>⚙️ Функции сжатия</h3>
+    <ul>
+      <li><strong>PDF:</strong> Пересборка через pdf-lib с удалением метаданных и лишних объектов</li>
+      <li><strong>Изображения:</strong> Сжатие через Canvas API с регулируемым качеством (10–100%)</li>
+      <li><strong>Документы DOC/DOCX:</strong> Оптимизация структуры ZIP-архива</li>
+      <li><strong>Три режима:</strong> Высокое (70–80%), Среднее (50–60%), Низкое (20–30%)</li>
+    </ul>
+  </div>
+
+  <div class="about-card">
+    <h3>🔐 Конфиденциальность</h3>
+    <p>
+      FileZip не загружает ваши файлы на серверы. Все операции выполняются исключительно в вашем браузере.
+      История хранится в LocalStorage вашего устройства и может быть очищена в любой момент.
+      Ваши файлы никогда не покидают ваш компьютер.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>📊 Структура проекта</h3>
+    <pre style="font-size:0.78rem;color:var(--text-muted);line-height:1.8;background:var(--bg2);padding:1rem;border-radius:8px;overflow-x:auto">project/
+├── index.html        — Главная страница
+├── compress.html     — Страница сжатия
+├── tools.html        — Инструменты
+├── history.html      — История операций
+├── about.html        — О проекте
+├── css/
+│   ├── style.css     — Основные стили
+│   └── responsive.css — Адаптивность
+└── js/
+    ├── app.js        — Общая логика
+    ├── compress.js   — Логика сжатия
+    ├── image.js      — Работа с изображениями
+    ├── document.js   — Работа с PDF
+    └── history.js    — История операций</pre>
+  </div>
+
+  <div class="about-card">
+    <h3>📈 Анализ аналогов</h3>
+    <ul>
+      <li><strong>iLovePDF</strong> — серверная обработка, платные функции, загрузка файлов на серверы</li>
+      <li><strong>SmallPDF</strong> — лимиты на бесплатных аккаунтах, требует регистрации</li>
+      <li><strong>FileZip</strong> — полностью клиентский, бесплатный, приватный, без ограничений</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">File<span>Zip</span></div>
+    <p>Дипломный проект — «Создание веб-приложения для сжатия и оптимизации документов и медиафайлов»</p>
+    <div class="footer-links">
+      <a href="index.html">Главная</a>
+      <a href="compress.html">Сжатие</a>
+      <a href="tools.html">Инструменты</a>
+      <a href="history.html">История</a>
+    </div>
+    <p class="footer-copy">© 2025 FileZip — Дипломная работа</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
